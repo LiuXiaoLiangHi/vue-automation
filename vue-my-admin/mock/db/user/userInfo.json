@@ -1,0 +1,35 @@
+{
+  "userInfo": [
+    {
+      "uu_id": "E3D8AB7D-82BC-3804-D3CB-EDB4EBA8EF4D",
+      "account": "a123456",
+      "name": "刘小亮",
+      "password": "123456aA",
+      "introduction": "我是超级管理员",
+      "mobile": 18770640208,
+      "isLogined": false,
+      "avatar": "https://www.qqpao.com/uploads/allimg/140329/10-140329143033.gif",
+      "roles": [
+        "admin"
+      ],
+      "isAllowDeleteUSer": false,
+      "router": []
+    },
+    {
+      "uu_id": "FC0B55E8-B054-4F39-38C9-3DC8260D1740",
+      "account": "editor123",
+      "name": "张三",
+      "password": "123456aA",
+      "introduction": "我是普通用户",
+      "mobile": 18460007401,
+      "isLogined": false,
+      "avatar": "https://s.cn.bing.net/th?id=OIP-C.Gr3dPDZnY3qHX48B7WW1iAAAAA&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "roles": [
+        "editor"
+      ],
+      "isAllowDeleteUSer": true,
+      "router": []
+    }
+     
+  ]
+}

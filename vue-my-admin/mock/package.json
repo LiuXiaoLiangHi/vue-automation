@@ -1,0 +1,14 @@
+{
+  "name": "my-home",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start_mock": "nodemon ./mock/index.js"
+  },
+  "dependencies": {
+    "jwt-redis": "^7.0.2",
+    "mockjs": "^1.1.0",
+    "redis": "^4.1.0"
+  }
+}

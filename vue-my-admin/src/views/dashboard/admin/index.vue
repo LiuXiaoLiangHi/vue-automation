@@ -1,0 +1,113 @@
+<template>
+  <div class="dashboard-editor-container">
+    <github-corner class="github-corner" />
+
+    <panel-group @handleSetLineChartData="handleSetLineChartData" :end_val="end_val" />
+
+    <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
+      <line-chart :chart-data="lineChartData" v-if="end_val" />
+    </el-row>
+
+    <el-row :gutter="32">
+      <el-col :xs="24" :sm="24" :lg="8">
+        <div class="chart-wrapper">
+          <raddar-chart />
+        </div>
+      </el-col>
+      <el-col :xs="24" :sm="24" :lg="8">
+        <div class="chart-wrapper">
+          <pie-chart />
+        </div>
+      </el-col>
+      <el-col :xs="24" :sm="24" :lg="8">
+        <div class="chart-wrapper">
+          <bar-chart />
+        </div>
+      </el-col>
+    </el-row>
+
+    <el-row :gutter="8">
+      <el-col :xs="{span: 24}" :sm="{span: 24}" :md="{span: 24}" :lg="{span: 12}" :xl="{span: 12}" style="padding-right:8px;margin-bottom:30px;">
+        <transaction-table />
+      </el-col>
+      <el-col :xs="{span: 24}" :sm="{span: 12}" :md="{span: 12}" :lg="{span: 6}" :xl="{span: 6}" style="margin-bottom:30px;">
+        <todo-list />
+      </el-col>
+      <el-col :xs="{span: 24}" :sm="{span: 12}" :md="{span: 12}" :lg="{span: 6}" :xl="{span: 6}" style="margin-bottom:30px;">
+        <box-card />
+      </el-col>
+    </el-row>
+  </div>
+</template>
+
+<script>
+import { fetchDashboard, xxx } from "@/api/echartsData";
+const GithubCorner = () => import("@/components/GithubCorner");
+const PanelGroup = () => import("./components/PanelGroup");
+const LineChart = () => import("./components/LineChart");
+const RaddarChart = () => import("./components/RaddarChart");
+const PieChart = () => import("./components/PieChart");
+const BarChart = () => import("./components/BarChart");
+const TransactionTable = () => import("./components/TransactionTable");
+const TodoList = () => import("./components/TodoList");
+const BoxCard = () => import("./components/BoxCard");
+
+export default {
+  name: "DashboardAdmin",
+  components: {
+    GithubCorner,
+    PanelGroup,
+    LineChart,
+    RaddarChart,
+    PieChart,
+    BarChart,
+    TransactionTable,
+    TodoList,
+    BoxCard,
+  },
+  data() {
+    return {
+      lineChartData: "",
+      end_val:null
+    };
+  },
+  methods: {
+    /**@description 根据传入的type更新不同的图表数据 */
+    async handleSetLineChartData(type) {
+      const { data } = await fetchDashboard(type);
+      this.end_val = data.grossData;
+      this.lineChartData = data.lineChartData;
+    },
+  },
+  created() {
+    this.handleSetLineChartData("newVisitis");
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.dashboard-editor-container {
+  padding: 32px;
+  background-color: rgb(240, 242, 245);
+  position: relative;
+
+  .github-corner {
+    position: absolute;
+    top: 0px;
+    border: 0;
+    right: 0;
+  }
+
+  .chart-wrapper {
+    background: #fff;
+    padding: 16px 16px 0;
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .chart-wrapper {
+    padding: 8px;
+  }
+}
+</style>
