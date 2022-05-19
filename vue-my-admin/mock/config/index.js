@@ -11,5 +11,6 @@ export const PUBLIC_KEy = fs.readFileSync(
 export const PRIVITE_KEY = fs.readFileSync(
   path.join(__dirname, "./config", "cert", "private_key.pem")
 );
-
+ 
+export const EXPIRESD = 60 * 60 * 24 // 过期时间1天
  
