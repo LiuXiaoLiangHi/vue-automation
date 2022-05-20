@@ -1,6 +1,4 @@
- 
-
-/**
+ /**
  * @deprecated 判断是否是外部的（http开头）
  * @param {string} path
  * @returns {Boolean}

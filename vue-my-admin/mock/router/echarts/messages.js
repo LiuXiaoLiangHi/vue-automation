@@ -1,3 +1,6 @@
+/**
+ * messages图表信息
+ */
 import { generate_number_0_1000 } from '../../utils/generate-number.js'
 import { RandomNumber } from './random-number.js'
 

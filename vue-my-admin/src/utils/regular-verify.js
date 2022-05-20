@@ -52,7 +52,13 @@ export const validateUserName = (rule, value, callback) => {
     );
   }
 }
-
+/**
+ * @description: 校验密码，并根据情况做出相应的处理
+ * @param {*} rule  
+ * @param {*} value 用户的密码
+ * @param {*} callback
+ * @return {*}
+ */
 export const validatePassword = (rule, value, callback) => {
   if (value == "") {
     callback(new Error("密码不能为空哦"));
@@ -63,6 +69,13 @@ export const validatePassword = (rule, value, callback) => {
     );
   }
 };
+/**
+ * @description: 校验手机号，并根据情况做出相应的处理
+ * @param {*} rule  
+ * @param {*} value 用户的手机号
+ * @param {*} callback
+ * @return {*}
+ */
 export const validatePhone = (rule, value, callback) => {
   if (value == "") {
     callback(new Error("手机号不能为空哦"));
@@ -73,13 +86,20 @@ export const validatePhone = (rule, value, callback) => {
     );
   }
 };
+/**
+ * @description: 校验用户输入的验证码，并根据情况做出相应的处理
+ * @param {*} rule  
+ * @param {*} value 用户的密码
+ * @param {*} callback
+ * @return {*}
+ */
 export const validateAuthCode = (rule, value, callback) => {
   if (value == "") {
     callback(new Error("验证码不能为空哦"));
   }
   if ((value.length!==6)) {
     callback(
-      new Error("验证码格式为6位数字哦")
+      new Error("验证码格式为6位数字字母哦")
     );
   }
 }

@@ -1,3 +1,6 @@
+/**
+ * 该文件的作用是用于处理获取用户注册请求
+ */
 import { userDb } from '../../db/user/user.js'
 import { User } from './user.js'
 /**

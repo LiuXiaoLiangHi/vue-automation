@@ -1,3 +1,6 @@
+/**
+ * 该文件的作用是用于处理获取用户登录请求
+ */
 import { generateToken } from '../../utils/generate-token.js'
 import { userDb } from '../../db/user/user.js'
 
@@ -24,7 +27,7 @@ function readUserInfoToLogin(userName, password) {
         let filterResult = userInfo.filter((elment) => elment.account == userName && elment.password == password)
 
         if (filterResult.length == 0) {
-            reject({
+            resolve({
                 code: 60204,
                 msg: '登录失败,用户名或密码错误'
             })
@@ -33,7 +36,7 @@ function readUserInfoToLogin(userName, password) {
                 code: 20000,
                 msg: '登录成功',
                 data: {
-                    token: generateToken()
+                    token: generateToken(userName)
                 }
             })
         }

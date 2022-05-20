@@ -1,10 +1,10 @@
 import { v4 as uuidv4 } from 'uuid';
 /**
  * @class 用户类
- * @description:  
+ * @description:  用于注册新用户初始化用户信息
  */
 export class User {
-    constructor({ uu_id = uuidv4(), name = '', account, password,mobile, roles = ["editor"],avatar = '',isAllowDeleteUSer = false,router = []}) {
+    constructor({ uu_id = uuidv4(), name = '', account, password, mobile, roles = ["editor"], avatar = '', isAllowDeleteUSer = false, router = [] }) {
         this.uu_id = uu_id //用户id
         this.name = name //名字
         this.account = account // 账号名
