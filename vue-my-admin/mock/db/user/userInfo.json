@@ -29,7 +29,19 @@
       ],
       "isAllowDeleteUSer": true,
       "router": []
+    },
+    {
+      "uu_id": "a0e98987-bbc3-4109-ab82-09c81de1ee70",
+      "name": "",
+      "account": "a123456789",
+      "password": "2517119123aA",
+      "mobile": 18777064020,
+      "roles": [
+        "editor"
+      ],
+      "avatar": "",
+      "isAllowDeleteUSer": false,
+      "router": []
     }
-     
   ]
 }

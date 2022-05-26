@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-editor-container">
-    <github-corner class="github-corner" />
+   
 
     <panel-group @handleSetLineChartData="handleSetLineChartData" :end_val="end_val" />
 
@@ -42,7 +42,6 @@
 
 <script>
 import { fetchDashboard, xxx } from "@/api/echartsData";
-const GithubCorner = () => import("@/components/GithubCorner");
 const PanelGroup = () => import("./components/PanelGroup");
 const LineChart = () => import("./components/LineChart");
 const RaddarChart = () => import("./components/RaddarChart");
@@ -55,7 +54,7 @@ const BoxCard = () => import("./components/BoxCard");
 export default {
   name: "DashboardAdmin",
   components: {
-    GithubCorner,
+    // GithubCorner,
     PanelGroup,
     LineChart,
     RaddarChart,

@@ -3,19 +3,20 @@ import store from '@/store'
 /**
  * @param {Array} value
  * @returns {Boolean}
- * @example see @/views/permission/directive.vue
+ * @example  
  */
 export default function checkPermission(value) {
   if (value && value instanceof Array && value.length > 0) {
+    // 获取当前角色
     const roles = store.getters && store.getters.roles
     const permissionRoles = value
-
+    
     const hasPermission = roles.some(role => {
       return permissionRoles.includes(role)
     })
     return hasPermission
   } else {
-    console.error(`need roles! Like v-permission="['admin','editor']"`)
+    console.error(` 你当前的角色不符! 请检查后重试`)
     return false
   }
 }

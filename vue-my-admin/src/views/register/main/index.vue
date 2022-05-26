@@ -44,7 +44,7 @@
 <script>
 // 登录接口
 import { fetchRegister } from "@/api/user";
-import {sleep} from '@/utils/sheep'
+import { sleep } from "@/utils/sheep";
 import { Message } from "element-ui";
 import {
   validateUserName,
@@ -56,13 +56,13 @@ export default {
   components: {},
   data() {
     return {
-       reg_checked: false,
-        buttonType: "info",
+      reg_checked: false,
+      buttonType: "info",
       reg_form: {
         userName: "",
         userPhoneNumber: "",
         userCode: "",
-        userPassword: ""
+        userPassword: "",
       },
       reg_rueus: {
         userName: [
@@ -99,20 +99,20 @@ export default {
   watch: {
     // 监视是否勾选用户协议
     reg_checked(newvalue) {
-        if (newvalue == true) {
-          console.log("xxx");
-          this.buttonType = "primary";
-        } else {
-          this.buttonType = "info";
-        } 
+      if (newvalue == true) {
+        console.log("xxx");
+        this.buttonType = "primary";
+      } else {
+        this.buttonType = "info";
+      }
     },
   },
   methods: {
-    async register(){
+    async register() {
       //校验结果
       let validateResult;
       await this.$refs.reg_form.validateField(
-        ["userName", "userPhoneNumber","userCode","userPassword"],
+        ["userName", "userPhoneNumber", "userCode", "userPassword"],
         (errorMessage) => {
           if (errorMessage) {
             validateResult = false;
@@ -127,15 +127,15 @@ export default {
         console.log("当前表单还有错误喔，不能向下执行");
         return;
       } else {
-      let result=  await fetchRegister(this.reg_form);
-      if(result.code=20000){
-        Message.success('3s后自动跳转登录页面哦')
-        sleep(3000).then(()=>{
-          this.$router.push('/login')
-        })
+        let result = await fetchRegister(this.reg_form);
+        if ((result.code = 20000)) {
+          Message.success("3s后自动跳转登录页面哦");
+          sleep(3000).then(() => {
+            this.$router.push("/login");
+          });
+        }
       }
-      }
-    }
+    },
   },
 };
 </script>

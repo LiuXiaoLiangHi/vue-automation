@@ -59,6 +59,7 @@ export default {
   methods: {
     // 表单提交
     async submitForm() {
+      
       // 校验表单是否有错误
       let validateResult;
       await this.$refs.loginForm.validateField(

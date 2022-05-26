@@ -1,5 +1,8 @@
 import { debounce } from '@/utils'
-
+/**
+ * 用于重置图表的大小
+ * 
+ */
 export default {
   data() {
     return {
@@ -10,15 +13,17 @@ export default {
   mounted() {
     this.initListener()
   },
+  // 当该视图显示时
   activated() {
     if (!this.$_resizeHandler) {
-      // avoid duplication init
+      //避免重复init
       this.initListener()
     }
 
-    // when keep-alive chart activated, auto resize
+    //当keep-alive图表激活时，自动调整大小
     this.resize()
   },
+  
   beforeDestroy() {
     this.destroyListener()
   },
@@ -26,8 +31,7 @@ export default {
     this.destroyListener()
   },
   methods: {
-    // use $_ for mixins properties
-    // https://vuejs.org/v2/style-guide/index.html#Private-property-names-essential
+    // 使用$_作为mixins属性
     $_sidebarResizeHandler(e) {
       if (e.propertyName === 'width') {
         this.$_resizeHandler()

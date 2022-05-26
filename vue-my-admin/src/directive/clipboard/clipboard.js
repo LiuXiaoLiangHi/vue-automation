@@ -1,11 +1,13 @@
 // Inspired by https://github.com/Inndy/vue-clipboard2
 const Clipboard = require('clipboard')
 if (!Clipboard) {
-  throw new Error('you should npm install `clipboard` --save at first ')
+  throw new Error('你没有安装clipboard')
 }
 
 export default {
+  // bind
   bind(el, binding) {
+    console.log(el,'--------------');
     if (binding.arg === 'success') {
       el._v_clipboard_success = binding.value
     } else if (binding.arg === 'error') {

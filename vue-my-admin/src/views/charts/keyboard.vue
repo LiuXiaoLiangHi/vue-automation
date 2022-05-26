@@ -5,6 +5,9 @@
 </template>
 
 <script>
+/**
+ * 该组件是键盘图表组件
+ */
 import Chart from '@/components/Charts/Keyboard'
 
 export default {

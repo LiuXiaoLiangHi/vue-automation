@@ -7,7 +7,7 @@
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            新访客
+            团队人数
           </div>
           <count-to :start-val="0" :end-val="end_val.newVisitis" :duration="2600" class="card-panel-num" />
         </div>
@@ -16,11 +16,11 @@
     <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
       <div class="card-panel" @click="handleSetLineChartData('messages')">
         <div class="card-panel-icon-wrapper icon-message">
-          <svg-icon icon-class="message" class-name="card-panel-icon" />
+          <svg-icon icon-class="账户余额" class-name="card-panel-icon" />
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            消息
+            当前余额
           </div>
           <count-to :start-val="0" :end-val="end_val.messages" :duration="3000" class="card-panel-num" />
         </div>
@@ -29,11 +29,11 @@
     <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
       <div class="card-panel" @click="handleSetLineChartData('purchases')">
         <div class="card-panel-icon-wrapper icon-money">
-          <svg-icon icon-class="money" class-name="card-panel-icon" />
+          <svg-icon icon-class="收入" class-name="card-panel-icon" />
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            消费
+            总收入
           </div>
           <count-to :start-val="0" :end-val="end_val.purchases" :duration="3200" class="card-panel-num" />
         </div>
@@ -46,7 +46,7 @@
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            购买
+            总消费
           </div>
           <count-to :start-val="0" :end-val="end_val.shoppings" :duration="3600" class="card-panel-num" />
         </div>

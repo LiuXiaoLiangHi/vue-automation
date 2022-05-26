@@ -9,7 +9,8 @@ const modulesFiles = require.context('./modules', true, /\.js$/)
 
 //你不需要' import app from ./modules/app
 //它将自动从模块文件中要求所有vex模块
-const modules = modulesFiles.keys().reduce((modules, modulePath) => {
+const modules =
+ modulesFiles.keys().reduce((modules, modulePath) => {
   // set './app.js' => 'app'
   const moduleName = modulePath.replace(/^\.\/(.*)\.\w+$/, '$1')
   const value = modulesFiles(modulePath)

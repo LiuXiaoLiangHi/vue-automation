@@ -1,5 +1,5 @@
  <template>
-  <div style="height:100%">
+  <div class="reg">
     <RegisterHeader />
     <RegisterMain />
   </div>
@@ -14,9 +14,9 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
-div {
- 
+<style lang="scss">
+body {
+  //body的背景颜色
   background-color: #f3f5f8;
 }
 </style>

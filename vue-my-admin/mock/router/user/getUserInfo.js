@@ -23,6 +23,7 @@ function getUserInfo(userName) {
                 msg: '权限不足，获取用户信息失败'
             })
         } else {
+            
             // 删减用户的部分信息返回
             const de_userInfoArray = Object.entries(filterResult[0]).filter(([key, val]) => key !== 'password')
             const de_userInfo = Object.fromEntries(de_userInfoArray)
