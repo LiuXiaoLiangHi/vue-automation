@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view />
-     <UndevelopedFeatures :isShowUnder="isShowUnder" :closeNumber="closeNumber"/>
+     <UndevelopedFeatures :isShowUnder.sync="isShowUnder" :closeNumber="closeNumber" @changeShow="changeShow"/>
   </div>
 </template>
 
@@ -47,6 +47,10 @@ export default {
         });
       });
     },
+    // 自定义事件-关闭弹窗--如果使用了sync的话请注释
+    changeShow(){
+      this.isShowUnder=false
+    }
   },
 };
 </script>

@@ -52,7 +52,7 @@ export default {
         legend: {
           left: 'center',
           bottom: '10',
-          data: ['方向1', '方向2', '方向3', '方向4', '方向5']
+          data: ['线上上课', '线下上课', '不上课',  '其它方式']
         },
         series: [
           {
@@ -62,11 +62,11 @@ export default {
             radius: [15, 95],
             center: ['50%', '38%'],
             data: [
-              { value: 320, name: '方向1' },
-              { value: 240, name: '方向2' },
-              { value: 149, name: '方向3' },
-              { value: 100, name: '方向4' },
-              { value: 59, name: '方向5' }
+              { value: 320, name: '线上上课' },
+              { value: 280, name: '线下上课' },
+              { value: 89, name: '不上课' },
+              // { value: 80, name: '其它方式' },
+              { value: 59, name: '其它方式' }
             ],
             animationEasing: 'cubicInOut',
             animationDuration: 2600

@@ -1,8 +1,12 @@
-// import parseTime, formatTime and set to filter
-export { parseTime, formatTime } from '@/utils'
+// 引入 parseTime, formatTime和设置 filter
+export {
+  parseTime,
+  formatTime
+}
+from '@/utils'
 
 /**
- * Show plural label if time is plural number
+ * 如果时间是复数，则显示复数标签
  * @param {number} time
  * @param {string} label
  * @return {string}
@@ -35,13 +39,30 @@ export function timeAgo(time) {
  * @param {number} digits
  */
 export function numberFormatter(num, digits) {
-  const si = [
-    { value: 1E18, symbol: 'E' },
-    { value: 1E15, symbol: 'P' },
-    { value: 1E12, symbol: 'T' },
-    { value: 1E9, symbol: 'G' },
-    { value: 1E6, symbol: 'M' },
-    { value: 1E3, symbol: 'k' }
+  const si = [{
+      value: 1E18,
+      symbol: 'E'
+    },
+    {
+      value: 1E15,
+      symbol: 'P'
+    },
+    {
+      value: 1E12,
+      symbol: 'T'
+    },
+    {
+      value: 1E9,
+      symbol: 'G'
+    },
+    {
+      value: 1E6,
+      symbol: 'M'
+    },
+    {
+      value: 1E3,
+      symbol: 'k'
+    }
   ]
   for (let i = 0; i < si.length; i++) {
     if (num >= si[i].value) {

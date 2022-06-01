@@ -16,7 +16,7 @@ export function validUsername(str) {
   const valid_map = ['admin', 'editor']
   return valid_map.indexOf(str.trim()) >= 0
 }
- 
+
 /**
  * @description 验证是否为有效的路径
  * @param {string} url

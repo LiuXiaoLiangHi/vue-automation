@@ -78,21 +78,21 @@ export default {
           type: 'bar',
           stack: 'vistors',
           barWidth: '60%',
-          data: [79, 52, 200, 334, 390, 330, 220],
+          data: [7, 0, 2, 3, 3, 0, 1],
           animationDuration
         }, {
           name: '文章2',
           type: 'bar',
           stack: 'vistors',
           barWidth: '60%',
-          data: [80, 52, 200, 334, 390, 330, 220],
+          data: [0, 2, 0, 3, 0, 3, 0],
           animationDuration
         }, {
           name: '文章3',
           type: 'bar',
           stack: 'vistors',
           barWidth: '60%',
-          data: [30, 52, 200, 334, 390, 330, 220],
+          data: [3, 2, 0, 4, 0, 0, 0],
           animationDuration
         }]
       })

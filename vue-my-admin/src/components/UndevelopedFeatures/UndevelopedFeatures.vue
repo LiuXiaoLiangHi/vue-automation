@@ -18,7 +18,10 @@ export default {
         return this.isShowUnder;
       },
       set(newvalue) {
-         this.$root.$children[0].isShowUnder=newvalue
+           this.$emit('changeShow')
+          //  this.$emit('update.isShowUnder',false)
+          //  console.log('我被执行了');
+        //  this.$root.$children[0].isShowUnder=newvalue
       },
     },
   },

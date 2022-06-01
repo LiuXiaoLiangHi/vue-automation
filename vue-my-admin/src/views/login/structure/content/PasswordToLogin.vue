@@ -63,7 +63,7 @@ export default {
       // 校验表单是否有错误
       let validateResult;
       await this.$refs.loginForm.validateField(
-        ["userName", "password"],
+        ["username", "password"],
         (errorMessage) => {
           if (errorMessage) {
             validateResult = false;

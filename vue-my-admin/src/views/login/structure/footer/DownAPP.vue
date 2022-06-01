@@ -7,7 +7,7 @@
     <div style="border:1px solid #EBEBEB;height:40px;margin-top:7px"></div>
     <div @click="xiazai">
       <svg-icon icon-class="下载" />
-      <span>下载APP</span>
+      <span>下载SDK</span>
     </div>
   </div>
 </template>

@@ -63,6 +63,9 @@ export const validatePassword = (rule, value, callback) => {
   if (value == "") {
     callback(new Error("密码不能为空哦"));
   }
+  if(value.length<8){
+    callback(new Error("密码长度需要8位以上哦"));
+  }
   if (!isPasswordLegal(value)) {
     callback(
       new Error("密码必须是大小写字母和数字的组合，且不能有特殊符号哦")
