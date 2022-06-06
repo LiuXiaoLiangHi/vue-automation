@@ -136,6 +136,13 @@ export default {
     //过滤掉可以显示在侧边栏的路由
     // And generate the internationalized title
     //生成国际化的标题
+    /**
+     * @description: 
+     * @param {*} routes
+     * @param {*} basePath
+     * @param {*} prefixTitle
+     * @return {*}
+     */    
     generateRoutes(routes, basePath = "/", prefixTitle = []) {
       let res = [];
 
@@ -179,7 +186,6 @@ export default {
     querySearch(query) {
       if (query !== "") {
         this.options = this.fuse.search(query);
-        console.log(this.options[0].item,'------------');
       } else {
         this.options = [];
       }

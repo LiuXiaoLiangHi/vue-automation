@@ -19,7 +19,7 @@ const getters = {
   introduction: state => state.user.introduction,
   // 用户的角色
   roles: state => state.user.roles,
-  // 用户的路由
+  // 当前用户的可访问路由
   permission_routes: state => state.permission.routes,
   // 错误日志
   errorLogs: state => state.errorLog.logs

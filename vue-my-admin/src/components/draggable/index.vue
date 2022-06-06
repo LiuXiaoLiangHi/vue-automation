@@ -4,15 +4,15 @@
       {{ headerText }}
     </div>
     <draggable
-      :list="list"
-      v-bind="$attrs"
+      v-bind="dragOptions"
       class="board-column-content"
-      :set-data="setData"
-      animation="300"
-      ghostClass="ghost"
+      v-model="list"
+      animation="2000"
+      @start="isDragging = true"
+      @end="isDragging = false"
     >
       <transition-group type="transition" name="flip-list">
-        <div v-for="element in list" :key="element.id" class="board-item">
+        <div v-for="element in com_list" :key="element.id" class="board-item">
           {{ element.name }} {{ element.id }}
         </div>
       </transition-group>
@@ -22,11 +22,22 @@
 
 <script>
 import draggable from "vuedraggable";
-
+//  this.$emit('update:visible', false)
 export default {
   name: "DragKanbanDemo",
   components: {
     draggable,
+  },
+  watch:{
+      list(newValue,old){
+        console.log(this);
+//  this.$emit('update:list', newValue)
+   console.log('newValue',newValue);
+   console.log("old",old);
+      },
+      com_list(newValue,old){
+       console.log("com_list被改变了");
+      }
   },
   props: {
     headerText: {
@@ -39,6 +50,7 @@ export default {
         return {};
       },
     },
+    // 列表数据
     list: {
       type: Array,
       default() {
@@ -46,12 +58,23 @@ export default {
       },
     },
   },
-  methods: {
-    setData(dataTransfer) {
-      // console.log('我被触发了');
-      // 避免火狐浏览器的bug  
-      // Detail see : https://github.comcom/RubaXa/Sortable/issues/1012
-      dataTransfer.setData("Text", "");
+  methods: {},
+  computed: {
+    dragOptions() {
+      return {
+        animation: 0,
+        group: "description",
+        disabled: false,
+        ghostClass: "ghost",
+      };
+    },
+    com_list: {
+      get() {
+        return this.list;
+      },
+      set() {
+        this.$emit(changeList, 123)
+      },
     },
   },
 };

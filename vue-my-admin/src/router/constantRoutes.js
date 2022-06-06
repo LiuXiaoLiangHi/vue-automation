@@ -1,6 +1,6 @@
 /**
  * 固定的路由，所有角色都具备的路由
- * 
+ * 目前有八个
  */
 import Layout from '@/layout/index.vue'
 export const constantRoutes = [
@@ -17,11 +17,13 @@ export const constantRoutes = [
     ]
   },
   {
+    // 登录页
     path: '/login',
     component: () => import('@/views/login/index'),
     hidden: true //不会在sidebar出现
   },
   {
+    // 注册页
     path: '/register',
     component: () => import('@/views/register/index'),
     hidden: true //不会在sidebar出现
