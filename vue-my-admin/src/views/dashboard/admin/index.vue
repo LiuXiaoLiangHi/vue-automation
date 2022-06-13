@@ -54,7 +54,6 @@ const BoxCard = () => import("./components/BoxCard");
 export default {
   name: "DashboardAdmin",
   components: {
-    // GithubCorner,
     PanelGroup,
     LineChart,
     RaddarChart,

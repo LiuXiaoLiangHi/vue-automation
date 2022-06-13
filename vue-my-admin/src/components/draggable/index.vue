@@ -1,55 +1,45 @@
-<template>
+  <template>
   <div class="board-column">
+    <!-- 头部信息 -->
     <div class="board-column-header">
       {{ headerText }}
     </div>
-    <draggable
-      v-bind="dragOptions"
-      class="board-column-content"
-      v-model="list"
-      animation="2000"
-      @start="isDragging = true"
-      @end="isDragging = false"
-    >
-      <transition-group type="transition" name="flip-list">
-        <div v-for="element in com_list" :key="element.id" class="board-item">
-          {{ element.name }} {{ element.id }}
-        </div>
-      </transition-group>
+    <!-- 可拖拽的区域 -->
+    <draggable :list="list" :group="group" class="board-column-content" :set-data="setData" animation="300" ghostClass="ghost">
+      <!-- 具体的项 -->
+      <div v-for="element in list" :key="element.id" class="board-item">
+        {{ element.name }} {{ element.id }}
+      </div>
     </draggable>
   </div>
 </template>
 
 <script>
 import draggable from "vuedraggable";
-//  this.$emit('update:visible', false)
+
 export default {
-  name: "DragKanbanDemo",
+  name: "Helloworld",
   components: {
     draggable,
   },
-  watch:{
-      list(newValue,old){
-        console.log(this);
-//  this.$emit('update:list', newValue)
-   console.log('newValue',newValue);
-   console.log("old",old);
-      },
-      com_list(newValue,old){
-       console.log("com_list被改变了");
-      }
-  },
   props: {
+    //头部信息
     headerText: {
       type: String,
       default: "Header",
     },
-    options: {
-      type: Object,
-      default() {
-        return {};
-      },
+    //
+    group: {
+      type: String,
     },
+    // 当然你也可以设置options选项完成自定义的样式
+    // options: {
+    //   type: Object,
+    //   default() {
+    //     return {};
+    //   },
+    // },
+
     // 列表数据
     list: {
       type: Array,
@@ -58,23 +48,12 @@ export default {
       },
     },
   },
-  methods: {},
-  computed: {
-    dragOptions() {
-      return {
-        animation: 0,
-        group: "description",
-        disabled: false,
-        ghostClass: "ghost",
-      };
-    },
-    com_list: {
-      get() {
-        return this.list;
-      },
-      set() {
-        this.$emit(changeList, 123)
-      },
+ 
+  methods: {
+    setData(dataTransfer) {
+      // 避免火狐浏览器的bug
+      // Detail see : https://github.comcom/RubaXa/Sortable/issues/1012
+      dataTransfer.setData("Text", "");
     },
   },
 };

@@ -22,7 +22,7 @@ export default {
         this.closeDialog();
       } else {
         // 清除所有的定时器，不然显示的时间会错乱
-        // FIXME 消耗大量性能可能存在BUG
+        // 消耗大量性能可能存在问题
         for (let i = 1; i < 100000; i++) {
           clearInterval(i);
         }

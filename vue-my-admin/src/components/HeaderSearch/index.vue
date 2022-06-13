@@ -35,6 +35,7 @@
 // fuse.is是轻量级的模糊搜索模块让搜索结果更符合预期
 import Fuse from "fuse.js";
 import path from "path";
+ 
 
 export default {
   name: "HeaderSearch",

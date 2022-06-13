@@ -8,6 +8,8 @@ import nestedRouter from './modules/nested'
 import tab from './modules/tab'
 import clipboard  from './modules/clipboard'
 import draggable from './modules/draggable'
+import myvideo from './modules/video'
+
 export const asyncRoutes = [
     icon,
     chartsRouter,
@@ -15,6 +17,7 @@ export const asyncRoutes = [
     tab,
     clipboard,
     draggable,
+    myvideo,
     // 404必须放到最后
     { path: '*', redirect: '/404', hidden: true }
   ]

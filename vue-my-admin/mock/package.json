@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    
     "start_mock": "nodemon ./mock/index.js"
   },
   "dependencies": {
