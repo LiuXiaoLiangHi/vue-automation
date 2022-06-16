@@ -6,7 +6,7 @@ import 'normalize.css/normalize.css' // a modern alternative to CSS resets
 
 import Element from 'element-ui'
 import './styles/element-variables.scss'
- 
+
 
 import '@/styles/index.scss' // 公用的样式
 
@@ -22,8 +22,8 @@ import axiosInstance from '@/config/httpConfig.js'
 
 import * as filters from './filters' // 引入全局过滤器
 
- 
-Vue.prototype.$http =  axiosInstance
+
+Vue.prototype.$http = axiosInstance
 
 
 Vue.use(Element, {
@@ -44,3 +44,4 @@ new Vue({
   store,
   render: h => h(App)
 })
+ 
